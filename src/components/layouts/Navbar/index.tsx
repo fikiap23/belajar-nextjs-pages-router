@@ -1,6 +1,7 @@
+import styleNavbar from './navbar.module.css'
 const Navbar = () => {
   return (
-    <nav className="w-full flex h-[40px] bg-black text-white items-center px-4">
+    <nav className={styleNavbar.navbar}>
       <div>Navbar</div>
     </nav>
   )
