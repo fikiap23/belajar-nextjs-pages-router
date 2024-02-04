@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
-import loginStyle from './login.module.css'
+import loginStyle from './login.module.scss'
 
 const LoginView = () => {
   const { push } = useRouter()
