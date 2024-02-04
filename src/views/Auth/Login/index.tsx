@@ -10,7 +10,7 @@ const LoginView = () => {
   }
   return (
     <div className={loginStyle.login}>
-      <h1>LoginPage</h1>
+      <h1 style={{ color: 'red', fontSize: '50px' }}>LoginPage</h1>
       <button
         onClick={handleLogin}
         type="button"
