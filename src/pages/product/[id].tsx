@@ -1,26 +1,15 @@
-// import { useRouter } from 'next/router'
-
-// const DetailProductPage = () => {
-//   const router = useRouter()
-//   return (
-//     <div>
-//       <h1>DetailProductPage</h1>
-//       <p>Product ID: {router.query.id}</p>
-//     </div>
-//   )
-// }
-
-// export default DetailProductPage
-
-// atau
+import { fetcher } from '@/lib/swr/fetcher'
+import DetailProductView from '@/views/DetailProduct'
 import { useRouter } from 'next/router'
+import useSWR from 'swr'
 
 const DetailProductPage = () => {
   const { query } = useRouter()
+  const { data, error, isLoading } = useSWR(`/api/product/${query.id}`, fetcher)
+  // console.log(data)
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">DetailProductPage</h1>
-      <p>Product ID: {query.id}</p>
+      <DetailProductView product={isLoading ? {} : data.data} />
     </div>
   )
 }
